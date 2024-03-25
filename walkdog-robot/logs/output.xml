@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on linux)" generated="2024-03-24T16:33:47.151281" rpa="false" schemaversion="5">
+<suite id="s1" name="Singup" source="/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/tests/singup.robot">
+<test id="s1-t1" name="Não deve cadastrar se o cpf for incorreto" line="20">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-24T16:33:47.626189" level="INFO">${dog_walker} = {'name': 'Fernanda Fittipaldi', 'email': 'fefitti@gmail.com', 'cpf': '000000141aa', 'cep': '88060224', 'street': 'Servidão Domingos Manoel da Silveira', 'district': 'São João do Rio Vermelho', 'city_u...</msg>
+<var>${dog_walker}</var>
+<arg>name=Fernanda Fittipaldi</arg>
+<arg>email=fefitti@gmail.com</arg>
+<arg>cpf=000000141aa</arg>
+<arg>cep=88060224</arg>
+<arg>street=Servidão Domingos Manoel da Silveira</arg>
+<arg>district=São João do Rio Vermelho</arg>
+<arg>city_uf=Florianópolis/SC</arg>
+<arg>number=1170</arg>
+<arg>details=Casa</arg>
+<arg>cnh=toretto.jpg</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-24T16:33:47.625751" elapsed="0.000476"/>
+</kw>
+<kw name="Start session" owner="base">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-03-24T16:33:47.627408" level="INFO">{"browser": "webkit", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/logs/browser/traces/d06b3b53-9ee8-427c-ba96-de38f7e5f46c"}</msg>
+<msg time="2024-03-24T16:33:47.904799" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-03-24T16:33:47.904931" level="INFO">See also file:///home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/logs/playwright-log.txt for additional details.</msg>
+<msg time="2024-03-24T16:33:47.905081" level="FAIL">Error: browserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     libicudata.so.70                                 ║
+║     libicui18n.so.70                                 ║
+║     libicuuc.so.70                                   ║
+╚══════════════════════════════════════════════════════╝</msg>
+<arg>browser=webkit</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="FAIL" start="2024-03-24T16:33:47.626809" elapsed="0.280367">Error: browserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     libicudata.so.70                                 ║
+║     libicui18n.so.70                                 ║
+║     libicuuc.so.70                                   ║
+╚══════════════════════════════════════════════════════╝</status>
+</kw>
+<kw name="New Page" owner="Browser">
+<arg>https://walkdog.vercel.app</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" start="2024-03-24T16:33:47.907426" elapsed="0.000046"/>
+</kw>
+<status status="FAIL" start="2024-03-24T16:33:47.626535" elapsed="0.281077">Error: browserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     libicudata.so.70                                 ║
+║     libicui18n.so.70                                 ║
+║     libicuuc.so.70                                   ║
+╚══════════════════════════════════════════════════════╝</status>
+</kw>
+<kw name="Go to signup page" owner="singup">
+<status status="NOT RUN" start="2024-03-24T16:33:47.907846" elapsed="0.000041"/>
+</kw>
+<kw name="Fill singup form" owner="singup">
+<arg>${dog_walker}</arg>
+<status status="NOT RUN" start="2024-03-24T16:33:47.908055" elapsed="0.000031"/>
+</kw>
+<kw name="Subimit signup form" owner="singup">
+<status status="NOT RUN" start="2024-03-24T16:33:47.908211" elapsed="0.000027"/>
+</kw>
+<kw name="Finish session" owner="base">
+<status status="NOT RUN" start="2024-03-24T16:33:47.908360" elapsed="0.000034"/>
+</kw>
+<tag>cpf_inv</tag>
+<status status="FAIL" start="2024-03-24T16:33:47.622859" elapsed="0.285698">Error: browserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     libicudata.so.70                                 ║
+║     libicui18n.so.70                                 ║
+║     libicuuc.so.70                                   ║
+╚══════════════════════════════════════════════════════╝</status>
+</test>
+<doc>Suite de testes de cadastro de dog walker</doc>
+<status status="FAIL" start="2024-03-24T16:33:47.151874" elapsed="0.761110"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">cpf_inv</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Singup">Singup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

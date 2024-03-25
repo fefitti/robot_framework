@@ -1,0 +1,75 @@
+(node:114062) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2024-03-24T19:33:47.582Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Listening on 39537"}
+{"level":30,"time":"2024-03-24T19:33:47.621Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-03-24T19:33:47.621Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-03-24T19:33:47.624Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-03-24T19:33:47.624Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-03-24T19:33:47.629Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2024-03-24T19:33:47.899Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Error of node method  newBrowser"}
+================= Original suppressed error =================
+browserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     libicudata.so.70                                 ║
+║     libicui18n.so.70                                 ║
+║     libicuuc.so.70                                   ║
+╚══════════════════════════════════════════════════════╝
+    at _newBrowser (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:9950:47)
+    at newBrowser (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10415:33)
+    at PlaywrightServer.newBrowser (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10708:34)
+    at Object.onReceiveHalfClose (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1084:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:516:31)
+    at BaseServerInterceptingCall.handleEndEvent (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:554:14)
+    at ServerHttp2Stream.<anonymous> (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:363:18) {
+  name: 'Error'
+}
+=============================================================
+{"level":30,"time":"2024-03-24T19:33:47.902Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Start of node method takeScreenshot"}
+================= Original suppressed error =================
+Error: Tried to take screenshot, but no page was open.
+    at exists (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:8714:11)
+    at takeScreenshot (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:8758:3)
+    at PlaywrightServer.takeScreenshot (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10708:34)
+    at Object.onReceiveHalfClose (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1084:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:516:31)
+    at BaseServerInterceptingCall.handleEndEvent (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:554:14)
+    at ServerHttp2Stream.<anonymous> (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:363:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+=============================================================
+{"level":30,"time":"2024-03-24T19:33:47.903Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Error of node method  takeScreenshot"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10068:15)
+    at PlaywrightServer.getActiveBrowser (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10693:59)
+    at PlaywrightServer.setTimeout (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10943:57)
+    at Object.onReceiveHalfClose (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1084:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:516:31)
+    at BaseServerInterceptingCall.handleEndEvent (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:554:14)
+    at ServerHttp2Stream.<anonymous> (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:363:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+=============================================================
+{"level":30,"time":"2024-03-24T19:33:47.911Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-03-24T19:33:47.911Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10068:15)
+    at PlaywrightServer.getActiveBrowser (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10693:59)
+    at PlaywrightServer.setTimeout (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/index.js:10943:57)
+    at Object.onReceiveHalfClose (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1084:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:516:31)
+    at BaseServerInterceptingCall.handleEndEvent (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:554:14)
+    at ServerHttp2Stream.<anonymous> (/home/fe-fitti/.local/lib/python3.11/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:363:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+=============================================================
+{"level":30,"time":"2024-03-24T19:33:47.916Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-03-24T19:33:47.916Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-03-24T19:33:47.939Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2024-03-24T19:33:47.939Z","pid":114062,"hostname":"fe-fitti-HP250G","msg":"End of node method closeAllBrowsers"}

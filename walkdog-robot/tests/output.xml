@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.6 on linux)" generated="2024-03-24T15:50:26.931162" rpa="false" schemaversion="5">
+<suite id="s1" name="Singup" source="/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/tests/singup.robot">
+<test id="s1-t1" name="Não deve cadastrar se o cpf for incorreto" line="20">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-24T15:50:27.406043" level="INFO">${dog_walker} = {'name': 'Fernanda Fittipaldi', 'email': 'fefitti@gmail.com', 'cpf': '000000141aa', 'cep': '88060224', 'street': 'Servidão Domingos Manoel da Silveira', 'district': 'São João do Rio Vermelho', 'city_u...</msg>
+<var>${dog_walker}</var>
+<arg>name=Fernanda Fittipaldi</arg>
+<arg>email=fefitti@gmail.com</arg>
+<arg>cpf=000000141aa</arg>
+<arg>cep=88060224</arg>
+<arg>street=Servidão Domingos Manoel da Silveira</arg>
+<arg>district=São João do Rio Vermelho</arg>
+<arg>city_uf=Florianópolis/SC</arg>
+<arg>number=1170</arg>
+<arg>details=Casa</arg>
+<arg>cnh=toretto.jpg</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-24T15:50:27.405594" elapsed="0.000490"/>
+</kw>
+<kw name="Start session" owner="base">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-03-24T15:50:27.407418" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/tests/browser/traces/9b09dd09-e94e-44fd-84a7-15ef46c21094"}</msg>
+<msg time="2024-03-24T15:50:27.662338" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/tests/browser/traces/9b09dd09-e94e-44fd-84a7-15ef46c21094"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-03-24T15:50:27.406705" elapsed="0.255818"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-03-24T15:50:28.746677" level="INFO">Successfully initialized new page object and opened url: https://walkdog.vercel.app</msg>
+<msg time="2024-03-24T15:50:28.746832" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://walkdog.vercel.app</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-03-24T15:50:27.662786" elapsed="1.084328"/>
+</kw>
+<status status="PASS" start="2024-03-24T15:50:27.406399" elapsed="1.341017"/>
+</kw>
+<kw name="Go to signup page" owner="singup">
+<kw name="Click" owner="Browser">
+<arg>css=a[href="/signup"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:28.748758" elapsed="0.102221"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-03-24T15:50:28.861003" level="INFO">Waited for Element with selector form h1 at state visible</msg>
+<arg>form h1</arg>
+<arg>visible</arg>
+<arg>5000</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-03-24T15:50:28.851243" elapsed="0.009874"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-03-24T15:50:28.882234" level="INFO">Text: 'Faça seu cadastro'</msg>
+<arg>form h1</arg>
+<arg>equal</arg>
+<arg>Faça seu cadastro</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:28.861284" elapsed="0.021072"/>
+</kw>
+<status status="PASS" start="2024-03-24T15:50:28.748135" elapsed="0.134318"/>
+</kw>
+<kw name="Fill singup form" owner="singup">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-03-24T15:50:28.883308" level="INFO">Fills the text 'Fernanda Fittipaldi' in the given field.</msg>
+<arg>css=input[name=name]</arg>
+<arg>${dog_walker}[name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:28.882992" elapsed="0.018955"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-03-24T15:50:28.902480" level="INFO">Fills the text 'fefitti@gmail.com' in the given field.</msg>
+<arg>css=input[name=email]</arg>
+<arg>${dog_walker}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:28.902113" elapsed="0.121789"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-03-24T15:50:29.024764" level="INFO">Fills the text '000000141aa' in the given field.</msg>
+<arg>css=input[name=cpf]</arg>
+<arg>${dog_walker}[cpf]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:29.024157" elapsed="0.020351"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-03-24T15:50:29.045039" level="INFO">Fills the text '88060224' in the given field.</msg>
+<arg>css=input[name=cep]</arg>
+<arg>${dog_walker}[cep]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:29.044683" elapsed="0.018367"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>css=input[type=button][value$=CEP]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:29.063225" elapsed="0.041423"/>
+</kw>
+<kw name="Get Property" owner="Browser">
+<msg time="2024-03-24T15:50:29.523354" level="INFO">Property: 'Servidão Domingos Manoel da Silveira'</msg>
+<arg>css=input[name=addressStreet]</arg>
+<arg>value</arg>
+<arg>equal</arg>
+<arg>${dog_walker}[street]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:29.104863" elapsed="0.418582"/>
+</kw>
+<kw name="Get Property" owner="Browser">
+<msg time="2024-03-24T15:50:29.532126" level="INFO">Property: 'São João do Rio Vermelho'</msg>
+<arg>css=input[name=addressDistrict]</arg>
+<arg>value</arg>
+<arg>equal</arg>
+<arg>${dog_walker}[district]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:29.523585" elapsed="0.008631"/>
+</kw>
+<kw name="Get Property" owner="Browser">
+<msg time="2024-03-24T15:50:29.538971" level="INFO">Property: 'Florianópolis/SC'</msg>
+<arg>css=input[name=addressCityUf]</arg>
+<arg>value</arg>
+<arg>equal</arg>
+<arg>${dog_walker}[city_uf]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:29.532417" elapsed="0.006639"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-03-24T15:50:29.539553" level="INFO">Fills the text '1170' in the given field.</msg>
+<arg>css=input[name=addressNumber]</arg>
+<arg>${dog_walker}[number]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:29.539198" elapsed="0.015831"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-03-24T15:50:29.555542" level="INFO">Fills the text 'Casa' in the given field.</msg>
+<arg>css=input[name=addressDetails]</arg>
+<arg>${dog_walker}[details]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-03-24T15:50:29.555190" elapsed="0.017718"/>
+</kw>
+<kw name="Upload File By Selector" owner="Browser">
+<msg time="2024-03-24T15:50:29.573738" level="FAIL">ValueError: Nonexistent input file path '/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/tests/resources/fixtures/toretto.jpg'</msg>
+<arg>css=input[type=file]</arg>
+<arg>${EXECDIR}/resources/fixtures/${dog_walker}[cnh]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Uploads file from `path` to file input element matched by selector.</doc>
+<status status="FAIL" start="2024-03-24T15:50:29.573120" elapsed="0.001575">ValueError: Nonexistent input file path '/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/tests/resources/fixtures/toretto.jpg'</status>
+</kw>
+<arg>${dog_walker}</arg>
+<status status="FAIL" start="2024-03-24T15:50:28.882679" elapsed="0.692267">ValueError: Nonexistent input file path '/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/tests/resources/fixtures/toretto.jpg'</status>
+</kw>
+<kw name="Subimit signup form" owner="singup">
+<status status="NOT RUN" start="2024-03-24T15:50:29.575220" elapsed="0.000052"/>
+</kw>
+<kw name="Finish session" owner="base">
+<status status="NOT RUN" start="2024-03-24T15:50:29.575472" elapsed="0.000028"/>
+</kw>
+<status status="FAIL" start="2024-03-24T15:50:27.402829" elapsed="2.172809">ValueError: Nonexistent input file path '/home/fe-fitti/QAx/projects/robot_framework/walkdog-robot/tests/resources/fixtures/toretto.jpg'</status>
+</test>
+<doc>Suite de testes de cadastro de dog walker</doc>
+<status status="FAIL" start="2024-03-24T15:50:26.931777" elapsed="2.730649"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Singup">Singup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
